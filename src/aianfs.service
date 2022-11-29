@@ -1,0 +1,11 @@
+[Unit]
+Description=NFS Service for clients.
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/aianfs.sh start
+Restart=on-failure
+
+[Install]
+WantedBy=halt.target reboot.target shutdown.target
