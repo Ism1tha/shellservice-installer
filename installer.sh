@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This script will install the AIA NFS Service on your system.
 
 echo "AIA NFS Service installer.\n"
@@ -27,11 +27,13 @@ cp src/aianfs.sh /usr/local/bin/aianfs.sh
 
 echo "Enabling AIA NFS Service..."
 
-systemctl enable aia-nfs.service
+mount 192.168.1.24:/mnt/fitxers/ /mnt/nfs
+
+systemctl enable aianfs.service
 
 echo "Starting AIA NFS Service..."
 
-systemctl start aia-nfs.service
+systemctl start aianfs.service
 
 echo "Done! AIA NFS Service is now installed."
 

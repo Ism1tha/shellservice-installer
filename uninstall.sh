@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This script will uninstall the AIA NFS Service from your system.
 
 echo "AIA NFS Service uninstaller.\n"
@@ -13,15 +13,12 @@ fi
 
 echo "Uninstalling AIA NFS Service..."
 
+umount /mnt/nfs
 systemctl stop aianfs.service
 
 rm /etc/systemd/system/aianfs.service
 rm /usr/local/bin/aianfs.sh
 
 sed -i '/mnt\/fitxers \/mnt\/nfs /d' /etc/fstab
-
-echo "Disabling AIA NFS Service..."
-
-systemctl disable aianfs.service
 
 echo "Done! AIA NFS Service is now uninstalled."
