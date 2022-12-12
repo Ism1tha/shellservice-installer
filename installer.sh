@@ -29,13 +29,14 @@ if [ ! -d "/home/$SUDO_USER/documents/" ]; then
   mkdir /home/$SUDO_USER/documents/
 fi
 
-ln -s /home/$SUDO_USER/documents/ $(xdg-user-dir DESKTOP)/documents
-
 echo "Enabling AIA NFS Service..."
 
 mount 192.168.1.24:/mnt/fitxers/ /mnt/nfs
 
 systemctl enable aianfs.service
+
+su $SUDO_USER
+ln -s /home/$SUDO_USER/documents/ $(xdg-user-dir DESKTOP)/documents
 
 echo "Starting AIA NFS Service..."
 
