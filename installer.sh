@@ -25,8 +25,8 @@ echo "Installing AIA NFS Service..."
 cp src/aianfs.service /etc/systemd/system/aianfs.service
 cp src/aianfs.sh /usr/local/bin/aianfs.sh
 
-if [ ! -d "/home/$SUDO_USER/documents/" ]; then
-  mkdir /home/$SUDO_USER/documents/
+if [ ! -d "/home/$SUDO_USER/fitxers/" ]; then
+  mkdir /home/$SUDO_USER/fitxers/
 fi
 
 echo "Enabling AIA NFS Service..."
@@ -36,7 +36,8 @@ mount 192.168.1.24:/mnt/fitxers/ /mnt/nfs
 systemctl enable aianfs.service
 
 su $SUDO_USER
-ln -s /home/$SUDO_USER/documents/ $(xdg-user-dir DESKTOP)/documents
+
+ln -s /home/$SUDO_USER/fitxers/ $(xdg-user-dir DESKTOP)/fitxers
 
 echo "Starting AIA NFS Service..."
 
