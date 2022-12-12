@@ -2,7 +2,7 @@
 # This script will install the AIA NFS Service on your system.
 
 echo "AIA NFS Service installer.\n"
-echo "This script will install the AIA NFS Service on your system.\n\n"
+echo "This script will install the AIA NFS Service on your system."
 
 echo "Checking for root privileges..."
 
@@ -24,6 +24,12 @@ echo "Installing AIA NFS Service..."
 
 cp src/aianfs.service /etc/systemd/system/aianfs.service
 cp src/aianfs.sh /usr/local/bin/aianfs.sh
+
+if [ ! -d "/home/$USER/documents/" ]; then
+  mkdir /home/$USER/documents/
+fi
+
+ln -s /home/$USER/documents/ $(xdg-user-dir DESKTOP)/documents
 
 echo "Enabling AIA NFS Service..."
 

@@ -2,7 +2,7 @@
 # This script will uninstall the AIA NFS Service from your system.
 
 echo "AIA NFS Service uninstaller.\n"
-echo "This script will uninstall the AIA NFS Service from your system.\n\n"
+echo "This script will uninstall the AIA NFS Service from your system."
 
 echo "Checking for root privileges..."
 
