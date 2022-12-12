@@ -35,9 +35,11 @@ mount 192.168.1.24:/mnt/fitxers/ /mnt/nfs
 
 systemctl enable aianfs.service
 
-su $SUDO_USER
+su $SUDO_USER << EOF
 
 ln -s /home/$SUDO_USER/fitxers/ $(xdg-user-dir DESKTOP)/fitxers
+
+EOF
 
 echo "Starting AIA NFS Service..."
 
