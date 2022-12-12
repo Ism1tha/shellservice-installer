@@ -25,11 +25,11 @@ echo "Installing AIA NFS Service..."
 cp src/aianfs.service /etc/systemd/system/aianfs.service
 cp src/aianfs.sh /usr/local/bin/aianfs.sh
 
-if [ ! -d "/home/$USER/documents/" ]; then
-  mkdir /home/$USER/documents/
+if [ ! -d "/home/$SUDO_USER/documents/" ]; then
+  mkdir /home/$SUDO_USER/documents/
 fi
 
-ln -s /home/$USER/documents/ $(xdg-user-dir DESKTOP)/documents
+ln -s /home/$SUDO_USER/documents/ $(xdg-user-dir DESKTOP)/documents
 
 echo "Enabling AIA NFS Service..."
 
