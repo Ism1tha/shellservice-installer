@@ -1,4 +1,3 @@
-#!/bin/bash
 # This script will install the AIA NFS Service on your system.
 
 echo "AIA NFS Service installer.\n"
@@ -39,10 +38,6 @@ systemctl enable aianfs.service
 
 su $SUDO_USER -c 'ln -s /home/$USER/fitxers/ $(xdg-user-dir DESKTOP)/fitxers'
 
-echo "Starting AIA NFS Service..."
-
-systemctl start aianfs.service
+systemctl daemon-reload
 
 echo "Done! AIA NFS Service is now installed."
-
-
