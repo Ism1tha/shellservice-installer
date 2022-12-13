@@ -7,7 +7,7 @@
 
 last_user=$(last -1 | awk 'NR==1{ print $1 }')
 current_date=$(date +%Y-%m-%d-%H-%M-%S)
-echo $last_user >> /mnt/nfs/last_user.txt
+
 if [ ! -d "/mnt/nfs/$last_user" ]; then
   mkdir /mnt/nfs/$last_user
 fi

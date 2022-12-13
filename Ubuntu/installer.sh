@@ -1,3 +1,4 @@
+#!/bin/bash
 # This script will install the AIA NFS Service on your system.
 
 echo "AIA NFS Service installer.\n"
