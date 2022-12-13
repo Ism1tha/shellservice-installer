@@ -5,11 +5,11 @@
 
 # Copy current user home to backup with timestamp name (e.g. /home/username/alumne-2020-01-01-00-00-00)
 
-if [ ! -d "/mnt/fitxers/$USER" ]; then
-  mkdir /mnt/fitxers/$USER
+if [ ! -d "/mnt/nfs/$USER" ]; then
+  mkdir /mnt/nfs/$USER
 fi
 
-current_date = $(date +%Y-%m-%d-%H-%M-%S)
-mkdir /home/$USER/fitxers/$USER-$current_date
-cp -r /home/$USER/fitxers /home/$USER/fitxers/$USER-$current_date
+current_date=$(date +%Y-%m-%d-%H-%M-%S)
+mkdir /mnt/nfs/$USER/$current_date
+cp -r /home/$USER/fitxers/* /mnt/nfs/$USER/$current_date
 rm -rf /home/$USER/fitxers/*

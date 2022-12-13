@@ -8,4 +8,4 @@ ExecStart=/usr/local/bin/aianfs.sh start
 Restart=on-failure
 
 [Install]
-WantedBy=halt.target reboot.target shutdown.target
+WantedBy=shutdown.target

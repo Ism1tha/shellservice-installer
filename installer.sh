@@ -28,11 +28,12 @@ chmod +x /usr/local/bin/aianfs.sh
 
 if [ ! -d "/home/$SUDO_USER/fitxers/" ]; then
   mkdir /home/$SUDO_USER/fitxers/
+  chown $SUDO_USER:$SUDO_USER /home/$SUDO_USER/fitxers/
 fi
 
 echo "Enabling AIA NFS Service..."
 
-mount 192.168.1.24:/mnt/fitxers/ /mnt/nfs
+mount $server_ip:/mnt/fitxers/ /mnt/nfs
 
 systemctl enable aianfs.service
 
